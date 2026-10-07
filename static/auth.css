@@ -1,0 +1,166 @@
+﻿/* Shared curved fields for registration and password recovery pages. */
+
+.register-shell .input,
+.login .password,
+body.login-page .input-box input {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 8px;
+  padding: 12px 15px !important;
+  color: #17212b !important;
+  background: rgba(255, 255, 255, .94) !important;
+  border: 1px solid #bfd0dc !important;
+  border-radius: 16px !important;
+  outline: 0;
+  box-shadow: 0 5px 14px rgba(25, 49, 66, .06) !important;
+  font: 14px 'Segoe UI', Arial, sans-serif !important;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.register-shell .input::placeholder,
+.login .password::placeholder,
+body.login-page .input-box input::placeholder {
+  color: #82919c;
+  opacity: 1;
+}
+
+.register-shell .input:focus,
+.login .password:focus,
+body.login-page .input-box input:focus {
+  border-color: #087f73 !important;
+  box-shadow: 0 0 0 4px rgba(8, 127, 115, .13), 0 6px 16px rgba(25, 49, 66, .08) !important;
+  transform: translateY(-1px);
+}
+
+.register-shell .input:-webkit-autofill,
+.login .password:-webkit-autofill,
+body.login-page .input-box input:-webkit-autofill {
+  -webkit-text-fill-color: #17212b;
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+}
+
+.login {
+  border-radius: 24px !important;
+}
+
+.login .password {
+  margin-top: 7px;
+}
+
+body.login-page .input-box input:-webkit-autofill,
+body.login-page .input-box input:-webkit-autofill:hover,
+body.login-page .input-box input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, .08) inset !important;
+}
+
+/* Login fields use one clean curved box per input. */
+body.login-page .input-box {
+  border: 1px solid rgba(255, 255, 255, .62) !important;
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, .08) !important;
+  box-shadow: inset 0 1px rgba(255, 255, 255, .1) !important;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+body.login-page .input-box input {
+  color: #fff !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color-scheme: dark;
+}
+
+body.login-page .input-box:focus-within {
+  border-color: #43d9ff !important;
+  background: rgba(255, 255, 255, .12) !important;
+  box-shadow: 0 0 0 4px rgba(67, 217, 255, .14), inset 0 1px rgba(255, 255, 255, .14) !important;
+}
+
+/* Chrome/Edge paint saved credentials through :-webkit-autofill. Replace
+   that light blue layer with the same dark glass surface as the form. */
+body.login-page .input-box input:-webkit-autofill,
+body.login-page .input-box input:-webkit-autofill:hover,
+body.login-page .input-box input:-webkit-autofill:focus,
+body.login-page .input-box input:-webkit-autofill:active {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 1000px rgba(4, 9, 25, .48) inset !important;
+  box-shadow: 0 0 0 1000px rgba(4, 9, 25, .48) inset !important;
+  transition: background-color 9999s ease-out 0s !important;
+}
+
+body.login-page .input-box label {
+  color: rgba(255, 255, 255, .9);
+}
+
+body.login-page .input-box input:focus ~ label,
+body.login-page .input-box input:not(:placeholder-shown) ~ label {
+  color: #43d9ff;
+  background: rgba(7, 14, 35, .9);
+}
+
+.login-box .google-actions {
+  display: grid;
+  gap: 9px;
+}
+
+.login-box .google-actions .google-signin {
+  margin: 0;
+}
+
+.login-box .google-actions .google-signup {
+  border-color: rgba(255, 255, 255, .5);
+  color: #fff;
+  background: rgba(255, 255, 255, .1);
+}
+
+.login-box .google-actions .google-signup:hover,
+.login-box .google-actions .google-signup:focus-visible {
+  color: #fff;
+  background: rgba(255, 255, 255, .18);
+}
+
+.login-box .google-setup-note {
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 218, 144, .4);
+  border-radius: 10px;
+  background: rgba(108, 72, 23, .28);
+  line-height: 1.5;
+}
+
+body.login-page .input-box .icon {
+  color: rgba(255, 255, 255, .9);
+}
+
+.login button {
+  border-radius: 16px !important;
+}
+
+button, a, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, .login button {
+  min-height: 46px;
+}
+
+input, select, textarea {
+  font-size: 16px !important;
+}
+
+@media (max-width: 620px) {
+  .login {
+    width: min(100% - 24px, 460px);
+    padding: 28px 20px !important;
+  }
+
+  .register-shell .input,
+  .login .password {
+    border-radius: 14px !important;
+  }
+}
+

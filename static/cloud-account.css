@@ -1,0 +1,488 @@
+﻿:root[data-theme="dark"] {
+    color-scheme: dark;
+    --account-ink: #f5edff;
+    --account-muted: #b5a6ca;
+    --account-line: #38204f;
+    --account-paper: #10091a;
+    --account-panel: rgba(27, 15, 42, .97);
+    --account-soft: #1b1028;
+    --account-accent: #d8a0ff;
+    --account-accent-strong: #ad40f5;
+    --account-shadow: 0 16px 44px rgba(0, 0, 0, .32);
+    --account-focus: #dc9cff;
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
+    --account-ink: #28123d;
+    --account-muted: #766584;
+    --account-line: #e5d8ef;
+    --account-paper: #fbf7ff;
+    --account-panel: rgba(255, 255, 255, .97);
+    --account-soft: #f7f0fc;
+    --account-accent: #7722b8;
+    --account-accent-strong: #5e168f;
+    --account-shadow: 0 14px 36px rgba(56, 20, 82, .09);
+    --account-focus: #7620b7;
+}
+
+body.cloud-account-page {
+    min-height: 100vh;
+    color: var(--account-ink);
+    background:
+        radial-gradient(ellipse at 82% 0%, rgba(129, 35, 191, .16), transparent 38rem),
+        radial-gradient(ellipse at 8% 68%, rgba(72, 24, 112, .1), transparent 34rem),
+        var(--account-paper);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    animation: account-page-enter .42s ease-out both;
+}
+
+.cloud-account-page *,
+.cloud-account-page *::before,
+.cloud-account-page *::after {
+    box-sizing: border-box;
+}
+
+.cloud-account-page h1,
+.cloud-account-page h2,
+.cloud-account-page h3 {
+    color: var(--account-ink);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    letter-spacing: -.035em;
+}
+
+.cloud-account-page p,
+.cloud-account-page label,
+.cloud-account-page input,
+.cloud-account-page button,
+.cloud-account-page a {
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.cloud-account-page .wrap {
+    width: min(1040px, calc(100% - 36px));
+    margin: 30px auto 56px;
+}
+
+.cloud-account-page .top {
+    align-items: center;
+    gap: 22px;
+}
+
+.cloud-account-page .top h1 {
+    font-size: clamp(30px, 5vw, 46px);
+    font-weight: 720;
+    line-height: 1.08;
+}
+
+.cloud-account-page .eyebrow,
+.cloud-account-page .top .muted:first-child {
+    color: var(--account-accent);
+    font-weight: 750;
+    letter-spacing: .12em;
+}
+
+.cloud-account-page .sub,
+.cloud-account-page .muted,
+.cloud-account-page .head p,
+.cloud-account-page .panel > p {
+    color: var(--account-muted);
+    line-height: 1.55;
+}
+
+.cloud-account-page .account-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: -7px 0 22px;
+    padding: 8px;
+    background: var(--account-panel);
+    border: 1px solid var(--account-line);
+    border-radius: 16px;
+    box-shadow: var(--account-shadow);
+    backdrop-filter: blur(15px);
+}
+
+.cloud-account-page .account-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+}
+
+.cloud-account-page .account-nav a {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 13px;
+    color: var(--account-muted);
+    border: 1px solid transparent;
+    border-radius: 11px;
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+    transition: color .18s ease, background-color .18s ease, transform .18s ease;
+}
+
+.cloud-account-page .account-nav a span {
+    color: var(--account-accent);
+    font-size: 16px;
+}
+
+.cloud-account-page .account-nav a:hover,
+.cloud-account-page .account-nav a[aria-current="page"] {
+    color: var(--account-ink);
+    background: rgba(173, 64, 245, .14);
+    border-color: rgba(216, 160, 255, .2);
+}
+
+.cloud-account-page .account-nav a:hover {
+    transform: translateY(-1px);
+}
+
+.cloud-account-page .account-theme-toggle {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 13px;
+    color: var(--account-ink);
+    background: var(--account-soft);
+    border: 1px solid var(--account-line);
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: border-color .18s ease, transform .18s ease;
+}
+
+.cloud-account-page .account-theme-toggle > span:first-child {
+    color: var(--account-accent);
+    font-size: 16px;
+}
+
+.cloud-account-page .account-theme-toggle:hover {
+    border-color: var(--account-accent);
+    transform: translateY(-1px);
+}
+
+.cloud-account-page .back,
+.cloud-account-page .top > a {
+    color: var(--account-accent);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.cloud-account-page .back:hover,
+.cloud-account-page .top > a:hover {
+    color: var(--account-ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.cloud-account-page .panel {
+    color: var(--account-ink);
+    background: var(--account-panel);
+    border: 1px solid var(--account-line);
+    border-radius: 16px;
+    box-shadow: var(--account-shadow);
+    animation: account-panel-enter .48s ease-out both;
+}
+
+.cloud-account-page .panel:nth-of-type(2) {
+    animation-delay: .06s;
+}
+
+.cloud-account-page .panel:nth-of-type(3) {
+    animation-delay: .12s;
+}
+
+.cloud-account-page .head,
+.cloud-account-page .panel-head {
+    border-color: var(--account-line);
+}
+
+.cloud-account-page .head h2,
+.cloud-account-page .panel h2 {
+    font-weight: 700;
+}
+
+.cloud-account-page .data .field {
+    border-color: var(--account-line);
+}
+
+.cloud-account-page .label,
+.cloud-account-page .field .label,
+.cloud-account-page .stat small,
+.cloud-account-page th {
+    color: var(--account-muted);
+}
+
+.cloud-account-page .value,
+.cloud-account-page .field .value {
+    color: var(--account-ink);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    font-weight: 560;
+}
+
+.cloud-account-page .profile-form input,
+.cloud-account-page form input:not([type="hidden"]),
+.cloud-account-page input[name="transaction_reference"] {
+    min-height: 44px;
+    color: var(--account-ink);
+    background: var(--account-soft);
+    border: 1px solid var(--account-line) !important;
+    border-radius: 10px !important;
+    font-size: 15px !important;
+}
+
+.cloud-account-page input::placeholder {
+    color: var(--account-muted);
+    opacity: .85;
+}
+
+.cloud-account-page .profile-note,
+.cloud-account-page .notice,
+.cloud-account-page .flash {
+    color: var(--account-muted);
+    background: var(--account-soft);
+    border: 1px solid var(--account-line);
+    border-radius: 11px;
+}
+
+.cloud-account-page .profile-links span {
+    color: var(--account-ink);
+    background: var(--account-soft);
+    border: 1px solid var(--account-line);
+    border-radius: 999px;
+}
+
+.cloud-account-page .summary {
+    gap: 12px;
+}
+
+.cloud-account-page .stat {
+    color: var(--account-ink);
+    background: var(--account-soft);
+    border: 1px solid var(--account-line);
+    border-left: 3px solid var(--account-accent-strong);
+    border-radius: 11px;
+}
+
+.cloud-account-page .stat strong,
+.cloud-account-page .price {
+    color: var(--account-ink);
+}
+
+.cloud-account-page .meter {
+    height: 10px;
+    background: var(--account-soft);
+    border: 1px solid var(--account-line);
+    border-radius: 999px;
+}
+
+.cloud-account-page .meter span {
+    background: linear-gradient(90deg, #8b2bd0, #cf5bfa);
+    border-radius: inherit;
+}
+
+.cloud-account-page .plans {
+    gap: 14px;
+}
+
+.cloud-account-page .plan {
+    color: var(--account-ink);
+    background: var(--account-soft);
+    border: 1px solid var(--account-line);
+    border-radius: 14px;
+    transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.cloud-account-page .plan:hover {
+    border-color: rgba(216, 160, 255, .65);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .15);
+    transform: translateY(-2px);
+}
+
+.cloud-account-page .plan h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.cloud-account-page .button,
+.cloud-account-page button:not(.account-theme-toggle) {
+    min-height: 44px;
+    padding: 10px 14px;
+    color: #fff !important;
+    background: linear-gradient(115deg, #7620b7, #a629e6) !important;
+    border: 1px solid transparent !important;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    transition: filter .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.cloud-account-page .button:hover,
+.cloud-account-page button:not(.account-theme-toggle):hover {
+    filter: brightness(1.12);
+    box-shadow: 0 7px 18px rgba(133, 38, 189, .25);
+    transform: translateY(-1px);
+}
+
+.cloud-account-page button.danger {
+    color: #fff !important;
+    background: linear-gradient(115deg, #a92e4d, #d34a63) !important;
+}
+
+.cloud-account-page button.danger:hover {
+    box-shadow: 0 7px 18px rgba(180, 43, 70, .22);
+}
+
+.cloud-account-page button:disabled {
+    cursor: not-allowed;
+    filter: grayscale(.6);
+    opacity: .62;
+    transform: none;
+}
+
+.cloud-account-page .table-wrap {
+    border-radius: inherit;
+}
+
+.cloud-account-page table {
+    color: var(--account-ink);
+    font-size: 13px;
+}
+
+.cloud-account-page th {
+    background: var(--account-soft);
+    border-color: var(--account-line);
+}
+
+.cloud-account-page td {
+    border-color: var(--account-line);
+}
+
+.cloud-account-page tbody tr {
+    transition: background-color .16s ease;
+}
+
+.cloud-account-page tbody tr:hover {
+    background: rgba(173, 64, 245, .08);
+}
+
+.cloud-account-page .qr {
+    border: 1px solid var(--account-line);
+    border-radius: 12px;
+    box-shadow: var(--account-shadow);
+}
+
+.cloud-account-page :focus-visible {
+    outline: 3px solid var(--account-focus);
+    outline-offset: 3px;
+}
+
+.cloud-account-page .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@keyframes account-page-enter {
+    from { opacity: .75; }
+    to { opacity: 1; }
+}
+
+@keyframes account-panel-enter {
+    from { opacity: .78; transform: translateY(9px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 720px) {
+    .cloud-account-page .wrap {
+        width: min(100% - 24px, 1040px);
+        margin-top: 18px;
+    }
+
+    .cloud-account-page .account-nav {
+        align-items: stretch;
+        flex-direction: column-reverse;
+    }
+
+    .cloud-account-page .account-nav-links {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cloud-account-page .account-nav a {
+        justify-content: center;
+        padding-inline: 8px;
+    }
+
+    .cloud-account-page .account-theme {
+        align-self: flex-end;
+    }
+
+    .cloud-account-page .data {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .cloud-account-page .data .field:nth-child(odd) {
+        border-right: 0;
+    }
+
+    .cloud-account-page .summary,
+    .cloud-account-page .plans {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .cloud-account-page .top {
+        display: block;
+    }
+
+    .cloud-account-page .top > a,
+    .cloud-account-page .back {
+        display: inline-block;
+        margin-top: 14px;
+    }
+
+    .cloud-account-page .summary,
+    .cloud-account-page .plans {
+        grid-template-columns: 1fr;
+    }
+
+    .cloud-account-page .profile-form {
+        grid-template-columns: 1fr;
+    }
+
+    .cloud-account-page .profile-form .wide {
+        grid-column: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cloud-account-page,
+    .cloud-account-page *,
+    .cloud-account-page *::before,
+    .cloud-account-page *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+

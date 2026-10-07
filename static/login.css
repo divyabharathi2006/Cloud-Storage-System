@@ -1,0 +1,431 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --login-white: #fff;
+  --login-glass: rgba(4, 9, 25, .48);
+  --login-border: rgba(255, 255, 255, .42);
+  --login-focus: #43d9ff;
+}
+
+.login-page,
+.login-page * {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-page {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--login-white);
+  background: #05060b url('/login-assets/bg.jpg') center / cover no-repeat fixed;
+  overflow-x: hidden;
+}
+
+.login-background-video {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-page::before {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(2, 7, 22, .84), rgba(13, 1, 27, .66));
+  content: '';
+}
+
+.login-page section {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: 100dvh;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px;
+  overflow-y: auto;
+}
+
+.login-box {
+  width: min(400px, 100%);
+  padding: 42px 44px 30px;
+  border: 1px solid var(--login-border);
+  border-radius: 20px;
+  background: var(--login-glass);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, .38), inset 0 1px rgba(255, 255, 255, .12);
+  backdrop-filter: blur(15px);
+}
+
+.login-box .google-signin {
+  color: #202124;
+  background: #fff;
+}
+
+.login-box .google-signin:hover,
+.login-box .google-signin:focus-visible {
+  color: #202124;
+  background: #f7faff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.login-box .github-signin {
+  color: #fff;
+  background: #24292f;
+}
+
+.login-box .github-signin:hover,
+.login-box .github-signin:focus-visible {
+  color: #fff;
+  background: #3b434b;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.login-box .google-signin,
+.login-box .github-signin {
+  display: inline-flex;
+  width: 58px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, .76);
+  border-radius: 14px;
+  text-decoration: none;
+  text-shadow: none;
+  transition: background .16s ease, box-shadow .16s ease, transform .16s ease;
+}
+
+.provider-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 0 12px;
+}
+
+.provider-logo {
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+
+.github-mark {
+  width: 27px;
+  height: 27px;
+}
+
+.google-signup-note {
+  margin: 0 0 15px;
+  color: rgba(255, 255, 255, .86);
+  font-size: .7em;
+  text-align: center;
+}
+
+.provider-actions a:focus-visible {
+  outline: 3px solid var(--login-focus);
+  outline-offset: 3px;
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 4px;
+  color: rgba(255, 255, 255, .75);
+  font-size: .68em;
+  text-transform: uppercase;
+}
+
+.login-divider::before,
+.login-divider::after {
+  height: 1px;
+  flex: 1;
+  background: rgba(255, 255, 255, .3);
+  content: "";
+}
+
+.login-brand {
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, .76);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, .8);
+}
+
+.login-box h1 {
+  margin: 0 0 30px;
+  color: var(--login-white);
+  font-size: 2em;
+  font-weight: 600;
+  letter-spacing: .01em;
+  text-align: center;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, .8);
+}
+
+body.login-page .input-box {
+  position: relative;
+  width: 100%;
+  margin: 30px 0;
+  border: 1px solid rgba(255, 255, 255, .58);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .08);
+  box-shadow: inset 0 1px rgba(255, 255, 255, .08);
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+body.login-page .input-box label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  color: rgba(255, 255, 255, .9);
+  font-size: 1em;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: .25s ease;
+}
+
+body.login-page .input-box input,
+body.login-page .input-box input[type='text'],
+body.login-page .input-box input[type='password'] {
+  display: block;
+  width: 100%;
+  height: 52px;
+  padding: 0 42px 0 15px;
+  color: var(--login-white) !important;
+  caret-color: var(--login-focus);
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: 0;
+  background: transparent !important;
+  box-shadow: none;
+  font-size: 1em;
+  appearance: none;
+}
+
+body.login-page .input-box input:focus ~ label,
+body.login-page .input-box input:not(:placeholder-shown) ~ label {
+  top: 0;
+  left: 12px;
+  padding: 0 5px;
+  color: var(--login-focus);
+  background: rgba(7, 14, 35, .9);
+  font-size: .78em;
+  transform: translateY(-50%);
+}
+
+body.login-page .input-box input:focus {
+  border-radius: 16px;
+}
+
+body.login-page .input-box:focus-within {
+  border-color: var(--login-focus);
+  background: rgba(255, 255, 255, .12);
+  box-shadow: 0 0 0 4px rgba(67, 217, 255, .14), inset 0 1px rgba(255, 255, 255, .12);
+}
+
+body.login-page .input-box input:-webkit-autofill,
+body.login-page .input-box input:-webkit-autofill:hover,
+body.login-page .input-box input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--login-white);
+  -webkit-box-shadow: 0 0 0 1000px transparent inset;
+  transition: background-color 9999s ease-out 0s;
+}
+
+body.login-page .input-box input::placeholder {
+  color: transparent;
+}
+
+body.login-page .input-box .icon {
+  position: absolute;
+  top: 14px;
+  right: 8px;
+  color: var(--login-white);
+  font-size: 1.15em;
+}
+
+body.login-page .password-toggle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  color: var(--login-white);
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 6px 18px rgba(6, 12, 24, .22);
+  cursor: pointer;
+  font-size: 1.05em;
+  transition: transform .15s ease, background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+
+body.login-page .password-toggle svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+/* Keep the eye control independent from the full-width submit button rules. */
+body.login-page .login-box .password-toggle {
+  width: 36px !important;
+  min-width: 36px;
+  height: 36px !important;
+  min-height: 36px !important;
+  margin: 0;
+  padding: 0 !important;
+  border-radius: 50% !important;
+}
+
+body.login-page .password-toggle:hover,
+body.login-page .password-toggle:focus-visible {
+  color: var(--login-focus);
+  background: rgba(97, 224, 255, .18);
+  border-color: rgba(97, 224, 255, .6);
+  transform: translateY(-1px);
+  outline: 0;
+}
+
+.remember-forget {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: -12px 0 19px;
+  color: rgba(255, 255, 255, .92);
+  font-size: .78em;
+}
+
+.remember-forget label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.remember-forget input {
+  accent-color: var(--login-focus);
+}
+
+.login-page a {
+  color: var(--login-white);
+  text-decoration: none;
+}
+
+.login-page a:hover,
+.login-page a:focus-visible {
+  color: var(--login-focus);
+  text-decoration: underline;
+}
+
+.login-box button {
+  width: 100%;
+  height: 44px;
+  border: 0;
+  border-radius: 40px;
+  color: #08101c;
+  background: var(--login-white);
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.login-box button:hover,
+.login-box button:focus-visible {
+  background: #dff8ff;
+  box-shadow: 0 0 24px rgba(67, 217, 255, .35);
+  transform: translateY(-1px);
+}
+
+.login-message {
+  margin: 18px 0 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 180, 150, .7);
+  border-radius: 8px;
+  color: #ffe4d9;
+  background: rgba(126, 24, 45, .46);
+  font-size: .78em;
+  text-align: center;
+}
+
+.login-notice {
+  margin: 0 0 18px;
+  padding: 10px 12px;
+  border: 1px solid rgba(130, 235, 255, .55);
+  border-radius: 8px;
+  color: #e1fbff;
+  background: rgba(0, 95, 130, .35);
+  font-size: .78em;
+  text-align: center;
+}
+
+.register-link {
+  margin: 24px 0 4px;
+  color: rgba(255, 255, 255, .9);
+  font-size: .82em;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .8);
+}
+
+.register-link a {
+  font-weight: 600;
+}
+
+@media (max-width: 420px) {
+  .login-page section {
+    align-items: flex-start;
+    padding: max(16px, env(safe-area-inset-top)) 12px max(24px, env(safe-area-inset-bottom));
+  }
+
+  .login-box {
+    width: 100%;
+    margin: auto 0;
+    padding: 28px 20px 24px;
+  }
+
+  .login-brand {
+    margin-bottom: 20px;
+    font-size: .68rem;
+  }
+
+  .login-box h1 {
+    margin-bottom: 22px;
+    font-size: 1.75rem;
+  }
+
+  body.login-page .input-box {
+    margin: 20px 0;
+  }
+
+  .remember-forget {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -2px 0 16px;
+    line-height: 1.45;
+  }
+
+  .login-box form > button[type="submit"] {
+    min-height: 48px;
+  }
+
+  .register-link {
+    margin-top: 20px;
+    line-height: 1.55;
+  }
+}
+
