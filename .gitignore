@@ -1,0 +1,24 @@
+﻿.env
+.env.*
+!.env.example
+
+# Local application data can contain uploaded files and account records.
+/storage/
+
+# Python environments and caches.
+.venv/
+__pycache__/
+*.py[cod]
+
+# Generated packaging/build output.
+/build/
+/dist/
+/desktop/build/
+/desktop/dist/
+/desktop-application/build/
+/desktop-application/dist/
+/installer/build/
+/installer/dist/
+.env
+.env.*
+!.env.example
